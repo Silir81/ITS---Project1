@@ -1,0 +1,25 @@
+Tema1: Flip a coin
+
+Cap sau pajura? Scrieti un program care sa simuleze "un aruncat cu banul".
+
+Cerinte:
+1. Faceti o lsita, care sa cuprinda elementele "cap" si "pajura".
+2. In momentul in care programul se executa:
+	1. Va aparea un mesaj de intro, moment in care user-ul isi poate introduce numele, de la tastatura.
+	Numele va fi afisat cel putin la final, cand jucatorul castiga sau pierde.
+
+	2. Userul va fi intrebat care dintre optiune doreste sa selecteze.
+	Selectia va fi memorata.
+
+3. Userul "joaca" impotriva calculatorului - acesta va selecta una din cele 2 optiuni, aleator.
+4. Daca selectia calculatorului e aceasi cu a userului, user castiga! :)
+	Altfel, userul pierde :(!
+
+Termen de predare: Marti, 24.10.2023
+
+Se vor avea in vedere:
+1. Codul sa nu aiba erori care sa nu permita userului sa ruleze codul (no compilation errors)
+2. Codul sa nu crash-uie intimpul rularii (no crash at run-time)
+3. Codul sa fie explicat
+4. Variabilele sa aibe nume sugestiv
+5. Functiile sa fie documentate
