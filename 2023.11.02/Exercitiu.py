@@ -71,7 +71,7 @@ print(type(my_new_list2))
 # - doar vocalele din stringul din cod
 #
 # code start
-the_string  = "The rain in Spain stays mainly on the plain"
+the_string = "The rain in Spain stays mainly on the plain"
 my_new_list = [voc for voc in the_string if voc.lower() in 'aeiou']
 
 print(my_new_list)
