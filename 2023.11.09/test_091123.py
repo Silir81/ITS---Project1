@@ -88,4 +88,4 @@ print(type(my_new_list))
 # # Raspuns:
 #
 # # 10. Care este sintaxa corecta pentru a defini o functie in python?
-# # Raspuns: def #function_name(Parameter: data type) => Return Expresion
+# # Raspuns: def #function_name(Parameter: data type) => Return Expresion !!
