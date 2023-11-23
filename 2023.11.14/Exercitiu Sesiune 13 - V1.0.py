@@ -10,7 +10,7 @@
 
 # 1.Scrieti o functie care sa sa verifice daca fisierul dat ca argumet pentru functie este intradevar un fisier
 # 2.Scrieti o functie care sa deschida fisierul doar cu dreptul de a-l citi
-# 3.Scrieti o functie care sa deschida fisierul cu dreptul de citire si de sriere
+# 3.Scrieti o functie care sa deschida fisierul cu dreptul de citire si de scriere
 # 4.Scrieti o functie care va permite sa adaugati o noua linie textului deja existent in fisier
 # 5.Scrieti o functie care sa permita sa stergeti fisierul, dar doar daca userul
 
@@ -47,8 +47,8 @@ def open_file_read(file_read):
     open_file = open(file_read, "r")
     print("Deschidem fisierul in modul 'Citire' si il listam folosind 'readlines'")
     lines = open_file.readlines()
-    for line in lines:
-        print(line)
+    # for line in lines:
+    #     print(line)
     open_file.close()
     return
 
@@ -62,18 +62,39 @@ def open_file_rr(read_write):
     -------
     """
     open_file = open(read_write, "r+")
-    print("Deschidem fisierul in modul 'Citire' si il listam folosind 'readlines'")
+    # print("Deschidem fisierul in modul 'Citire' si il listam folosind 'readlines'")
 
     #Citeste toate liniile din fisierul deschis si le inregistreaza ca o lista in variabila "line"
     lines = open_file.readlines()
 
     # Itereaza fiecare linie a listei
-    for line in lines:
-        print(line)
+    # for line in lines:
+    #     print(line)
     open_file.close()
     return
 
+def open_and_append(append):
+    """
 
+    Parameters
+    ----------
+    append
+
+    Returns
+    -------
+
+    """
+    open_file = open(append, "a")
+    open_file.writelines(my_string + "\n")
+    open_file.close()
+    open_file = open(append, "a")
+    int_text = input("introduceti o noua linie")
+    open_file.writelines(int_text + "\n")
+    open_file.close()
+    open_file = open(append, "r")
+    print(open_file.read())
+    open_file.close()
+    return
 
 
 
@@ -91,3 +112,7 @@ if __name__ == "__main__":
     veriyi_file_existence(path_file)
     print()
     open_file_read(path_file)
+    print()
+    open_file_rr(path_file)
+    print()
+    open_and_append(path_file)
