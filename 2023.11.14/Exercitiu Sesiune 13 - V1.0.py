@@ -46,17 +46,17 @@ def open_file_read(file_read):
     -------
     """
     open_file = open(file_read, "r")
-    print("Deschidem fisierul in modul 'Citire' si il listam folosind 'ReadLines'")
+    print("Deschidem fisierul in modul 'Citire' si il listam folosind 'ReadLines' \n")
     lines = open_file.readlines()
-    # for line in lines:
-    #     print(line)
+    for line in lines:
+        print(line.strip())  # Printeaza fiecare linie din fisier separat, eliminand orice withespace
     open_file.close()
-    print(lines)
+    return lines
 
 
 def open_file_rr(read_write):
     """
-    Acesta functie deschide un fisier existent in modul citire.
+    Acesta functie deschide un fisier existent in modul citire si scriere.
     Parameters:
         read_write
     Returns:
@@ -64,12 +64,14 @@ def open_file_rr(read_write):
     -------
     """
     open_file = open(read_write, "r+")
-    # print("Deschidem fisierul in modul 'Citire' si il listam folosind 'readlines'")
+    print("Deschidem fisierul in modul 'Citire si Scriere' si il listam folosind 'Readlines' \n")
 
     # Citeste toate liniile din fisierul deschis si le inregistreaza ca o lista in variabila "line".
     lines = open_file.readlines()
-
+    for line in lines:
+        print(line.strip())  # Printeaza fiecare linie din fisier separat, eliminand orice withespace
     open_file.close()
+    return lines
 
 
 def open_and_append(append):
@@ -83,12 +85,11 @@ def open_and_append(append):
     -------
 
     """
-    # open_file = open(append, "a")
-    # open_file.writelines(my_string + "\n")
-    # open_file.close()
     open_file = open(append, "a")
-    int_text = input("Introduceti o noua linie :\n")
-    int_linie = open_file.writelines(int_text)  # + "\n")
+    print("Deschidem fisierul in modul 'Append' ")
+    int_text = input("Introduceti o noua linie: \n ")
+    open_file.write("\n" + int_text)
+    open_file.close()
     open_file = open(append, "r")
     print(open_file.read())
     open_file.close()
