@@ -12,7 +12,7 @@
 # 2.Scrieti o functie care sa deschida fisierul doar cu dreptul de a-l citi
 # 3.Scrieti o functie care sa deschida fisierul cu dreptul de citire si de scriere
 # 4.Scrieti o functie care va permite sa adaugati o nouă linie textului deja existent in fisier
-# 5.Scrieti o functie care sa permita sa stergeti fisierul, dar doar daca userul
+# 5.Scrieti o functie care sa permita sa stergeti fisierul, dar doar daca userul confirma acest lucru
 
 
 import os.path
@@ -76,23 +76,38 @@ def open_file_rr(read_write):
 
 def open_and_append(append):
     """
-
     Parameters
-    ----------
-    append
-
+        append
     Returns
-    -------
-
+        Daca fisierul exita va returna continutul fisierului cu noua linie adaugata
     """
+
     open_file = open(append, "a")
     print("Deschidem fisierul in modul 'Append' ")
-    int_text = input("Introduceti o noua linie: \n ")
-    open_file.write("\n" + int_text)
+    # Daca lasam spatiu inainte de \n la codul "Introduceti o noua linie:\n" textul introdus va incepe cu un whitespace
+    int_text = input("Introduceti o noua linie: \n")
+    open_file.write("\n" + int_text + "\n")
     open_file.close()
     open_file = open(append, "r")
     print(open_file.read())
     open_file.close()
+
+
+def delete_file(sterge):
+    """
+    Acesta functie deschide un fisier existent in modul citire si scriere.
+    Parameters:
+        sterge
+    Returns:
+        Daca fisierul exita va returna continutul fisierului
+    -------
+    """
+    comanda_stergere = input("Doresti sa stergi fisierul 'd / n' \n")
+    if comanda_stergere == "d":
+        os.remove(sterge)
+        print("Fisierul a fost sters cu succes")
+    else:
+        print("Fisiernul nu va fi sters")
 
 
 if __name__ == "__main__":
@@ -113,3 +128,5 @@ if __name__ == "__main__":
     open_file_rr(path_file)
     print()
     open_and_append(path_file)
+    print()
+    delete_file(path_file)
